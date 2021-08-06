@@ -92,11 +92,22 @@ WSGI_APPLICATION = 'AAF_summer_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'bfyu5g9jrhus8ridjtwv',
+       'USER': 'uuprvqijeku0rf9sjcws',
+       'PASSWORD': '2bkXBLtRyhhjcrosfTuw',
+       'HOST': 'bfyu5g9jrhus8ridjtwv-postgresql.services.clever-cloud.com',
+       'PORT': '5432',
+   }
 }
 
 
