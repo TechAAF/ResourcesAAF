@@ -19,7 +19,6 @@ from django.views.generic import TemplateView
 from AAF_summer_website import views
 
 urlpatterns = [
-    path('',views.index),
     path('admin/', admin.site.urls),
     path('', include('courses.urls')),
     path('contests/', include('contests.urls')),
