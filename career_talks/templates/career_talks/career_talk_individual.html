@@ -17,7 +17,7 @@
         {% if career_talk.embeded_video_link %}
             <div class="yt-video">
                 <div class="ratio ratio-16x9">
-                    {{career_talk.embeded_video_link}}
+                    {{career_talk.embeded_video_link | safe}}
                 </div>
             </div>
         {% endif %}
