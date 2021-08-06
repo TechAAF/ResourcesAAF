@@ -5,7 +5,7 @@ from cloudinary.models import CloudinaryField
 
 class Research_Center(models.Model):
     name = models.CharField(max_length=250)
-    logo = CloudinaryField('logo')
+    logo = CloudinaryField('logo', blank=True, null=True)
     image1 = CloudinaryField('image1', blank=True, null=True , help_text='<b style="color:green;font-size: 15px">*IMPORTANT* All three image should be of equal ratio (preffered: 3 x 2 )</b>')
     image2 = CloudinaryField('image2', blank=True, null=True)
     image3 = CloudinaryField('image3', blank=True, null=True)
