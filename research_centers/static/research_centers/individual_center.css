@@ -6,12 +6,19 @@
 .center-image img {
     width: 100%;
 }
+.center-logo img {
+    width: 30%;
+    display: block;
+    margin: auto;
+    margin-bottom: 1rem;
+}
 
 div.center-name {
-    background-color: lightblue;
+    /* background-color: lightblue; */
     padding-top: 1rem;
     padding-bottom: 1rem;
-    border-radius: 5px;
+    /* border-radius: 5px; */
+    border-bottom: 1px solid lightblue;
 }
 
 .activities-wrapper {
@@ -26,6 +33,7 @@ div.activities {
     padding-bottom: 2rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
+    z-index: 2;
 }
 
 .card.join-us-card {
@@ -36,7 +44,6 @@ div.join-us-card {
     right: 10px;
     top: calc(50% + 53px);
     transform: translateY(-50%);
-    z-index: -1;
 }
 .btn-purple {
     background-color: #a53692;
