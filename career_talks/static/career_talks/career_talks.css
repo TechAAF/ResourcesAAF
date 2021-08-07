@@ -6,6 +6,8 @@
 .top-div {
     height: 50vh;
     max-height: 700px;
+
+    background:url('../Images/CareerTalks.jpg') no-repeat center center/cover;
     
     color: white;
     margin-top: 70px;
@@ -14,7 +16,7 @@
     align-items: center;
     margin-bottom: 3rem;
 }
-.top-div::before{
+/* .top-div::before{
     content:"";
     position: absolute;
     background:url('../Images/CareerTalks.jpg') no-repeat center center/cover;
@@ -25,7 +27,7 @@
     opacity: 0.9;
     z-index: -1;
 
-}
+} */
 
 .top-div-wrapper {
     position: relative;
@@ -58,13 +60,6 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.talk-text {
-    /* height: 50%; */
-    max-height: 150px;
-    overflow: hidden;
-
-}
-
 .btn-purple {
     background-color: #a53692;
     padding: 0.3rem;

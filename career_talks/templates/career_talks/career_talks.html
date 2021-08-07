@@ -1,62 +1,58 @@
-{% extends 'career_talks/base.html' %}
-{% load static %}
+{% extends 'career_talks/base.html' %} {% load static %} {% block stylesheets %}
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'career_talks/career_talks.css' %}"
+/>
 
-{% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{% static 'career_talks/career_talks.css' %}" />
-
-{% endblock stylesheets %}
-
-{% block body %}
+{% endblock stylesheets %} {% block body %}
 
 <div class="top-div">
     <div class="top-div-wrapper text-center">
         <h1 class="">Career Talks</h1>
-        <p class="font-body">
-            
-        </p>
+        <p class="font-body"></p>
     </div>
 </div>
 <div class="wrapper">
-
     <!-- <div class="sub-heading text-center">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam temporibus consequatur provident velit magnam ipsa voluptate ab, facere eaque eveniet?</p>
     </div> -->
 
     <div class="row">
         <div class="col-12 col-md-9 order-1 order-md-0">
-            
-            {% for talk in career_talks %}
-                <div class="row my-5 career-talk">
-                    {% if talk.image %}
-                        
+            {% for talk in career_talks %} 
+                {% if talk.status %}
+                    <div class="row my-5 career-talk">
+                        {% if talk.image %}
+
                         <div class="col-md-6 p-0">
                             <div class="talk-image">
-                                <img src="{{talk.image.url}}" alt="">
+                                <img src="{{talk.image.url}}" alt="" />
                             </div>
                         </div>
-                    {% else %}
+                        {% else %}
                         <div class="col-md-6 p-0">
                             <div class="ratio ratio-16x9">
                                 {{talk.embeded_video_link | safe}}
                             </div>
                         </div>
-                    {% endif %}
-                        <div class="col-md-6 ">
+                        {% endif %}
+                        <div class="col-md-6">
                             <div class="talk-details">
                                 <div class="talk-body">
                                     <h2><a href="">{{talk.title}}</a></h2>
                                     <div class="talk-text gray">
-                                        <p>
-                                            {{talk.description| safe}}
-                                        </p>
+                                        <p>{{talk.short_description| safe}}</p>
                                     </div>
                                 </div>
-                                <a href="{{talk.id}}"><button class="btn-purple">View</button></a>
+                                <a href="{{talk.id}}"
+                                    ><button class="btn-purple">View</button></a
+                                >
                             </div>
                         </div>
-                </div>
+                    </div>
+                {% endif %} 
             {% endfor %}
-
         </div>
 
         <div class="col-12 col-md-3 order-0 order-md-1">
@@ -64,21 +60,34 @@
                 <h3 class="text-center">FILTER</h3>
                 <div class="filter-input">
                     <form action="/career_talks/" method="GET">
-                        {% csrf_token %}
-                        {% for option in filters %}
-                            <input type="checkbox" id="{{option.name}}" name="filter_list" value="{{option.name}}" {% if option.name in active_filters %} checked {% endif %}>
-                            <label for="{{option.name}}">{{option.name}}</label><br>
+                        {% csrf_token %} {% for option in filters %}
+                        <input
+                            type="checkbox"
+                            id="{{option.name}}"
+                            name="filter_list"
+                            value="{{option.name}}"
+                            {%
+                            if
+                            option.name
+                            in
+                            active_filters
+                            %}
+                            checked
+                            {%
+                            endif
+                            %}
+                        />
+                        <label for="{{option.name}}">{{option.name}}</label
+                        ><br />
                         {% endfor %}
-                        <button class="btn btn-primary w-100" type="submit">Apply</button>
+                        <button class="btn btn-primary w-100" type="submit">
+                            Apply
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
-
-
     </div>
-    
-    
 </div>
 
 {% endblock body %}
