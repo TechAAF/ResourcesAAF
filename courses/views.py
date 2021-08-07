@@ -45,7 +45,7 @@ def courses(request):
 # Method to get Playlist ID from URL
 # TODO: Add more checks on URL
 def get_playlist_id(URL):
-    INITIAL = 'https://www.youtube.com/playlist?list='
+    INITIAL = 'youtube.com/playlist?list='
     if INITIAL in URL:
         index = URL.find(INITIAL)+len(INITIAL)
         ID = URL[index:]

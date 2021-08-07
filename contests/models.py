@@ -34,5 +34,5 @@ class Submission(models.Model):
     image_id=models.CharField(null=True,default="",max_length=200)
     # video_url=models.TextField(blank=True, null=True)
     status=models.BooleanField("Approved", default=False)
-    
+    date=models.DateTimeField(auto_now_add=True, blank=True,null=True)
 
