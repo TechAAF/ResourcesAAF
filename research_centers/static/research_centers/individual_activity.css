@@ -2,7 +2,8 @@
 
 .activity {
     margin: auto;
-    width: 60%;
+    width: 80%;
+    margin: auto;
     margin-top: 110px;
 }
 
@@ -10,3 +11,18 @@
     width: 100%;
 }
 
+img.logo {
+    width: 25%;
+    margin: auto;
+    margin-top: 100px;
+    position: fixed;
+    left: 5%;
+}
+
+@media only screen and (max-width: 800px) {
+    img.logo {
+        width: 100%;
+        margin-top: 100px;
+        position: static;
+    }
+}

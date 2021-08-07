@@ -43,9 +43,9 @@
                   </div>
                 <div class="center-body mt-4">
                     <div class="center-name">
-                      <div class="center-logo">
+                      <!-- <div class="center-logo">
                         <img src="{{center.logo.url}}" class="card-img-top" alt="...">
-                      </div>
+                      </div> -->
                         <h2 class="text-center">{{center.name}}</h2>
                     </div>
                     <p>{{center.info | safe}}</p>
@@ -63,7 +63,7 @@
                       <p class="card-text text-center">{{center.short_description}}</p>
                       <div class="join">
                         <a href="{{center.join_us}}" class="btn btn-purple w-100">
-                          Join Us
+                          Be a part of research center
                         </a>
                       </div>
                     </div>
@@ -75,13 +75,10 @@
 </div>
 
 {% if activities %}
-<div class="activities-wrapper my-5">
+<div class="activities-wrapper my-5" style="z-index: 5;">
     <div class="activities">
-        <h5 class="text-center">Our activities and initiatives</h5>
+        <h5 class="text-center">Our Activities and Initiatives</h5>
         <p class="text-end"><a href="activities" >See more ..</a></p>
-
-        
-
 
         <div class="row row-cols-1 row-cols-md-3 gy-4">
             {% for activity in activities %}
@@ -96,7 +93,7 @@
                         </div>
                     {% endif %}
                     <div class="card-body">
-                      <p class="card-text">{{activity.text | safe}}</p>
+                      <p class="card-text">{{activity.short_description | safe}}</p>
                     </div>
                     <a class="btn btn-purple btn-md mb-3 mx-auto " href="activities/{{activity.id}}">Show</a>
                 </div>

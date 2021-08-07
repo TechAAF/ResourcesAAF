@@ -49,13 +49,17 @@ def get_research_center_activities(request, center_id):
 
 # Show all the activities of the research center
 def show_activity(request, center_id,activity_id):
-
+    
+    center = models.Research_Center.objects.get(pk=center_id)
     activity = models.Activity.objects.get(pk=activity_id)
+
+
 
     
     print(activity)
 
     context = {
+        'center': center,
         'activity': activity
     }
 
