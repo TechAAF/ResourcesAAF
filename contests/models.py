@@ -33,5 +33,5 @@ class Submission(models.Model):
     image= models.TextField(blank=True, null=True)
     image_id=models.CharField(null=True,default="",max_length=200)
     # video_url=models.TextField(blank=True, null=True)
-    status=models.BooleanField(default=False)
+    status=models.BooleanField("Approved", default=False)
 

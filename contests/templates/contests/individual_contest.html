@@ -76,7 +76,9 @@
                         <div class="submission-card">
                             <div class="card">
                                 <div class="card-header py-3"><strong>{{submission.user_id.username}}</strong></div>
-                                <img src="{{ submission.image.url}}" class="card-img-top" alt="...">
+                                {% if submission.image %}
+                                    <img src="{{ submission.image}}" class="card-img-top" alt="...">
+                                {% endif %}
                                 <!-- <p class="card-text">Video_url={{submission.video_url}}</p> -->
                                 <div class="card-body">
                                 <h5 class="card-title">Heading</h5>
