@@ -21,7 +21,7 @@ class Research_Center(models.Model):
 class Activity(models.Model):
     title = models.CharField(max_length=200)
     image = CloudinaryField('image', blank=True, null=True)
-    video = models.CharField(max_length=1000, blank=True, null=True, help_text='<b style="color:green;font-size: 12px">*IMPORTANT* Only add either Video link or Image, If you add both, only the image will be shown</b>')
+    video = models.TextField(blank=True, null=True, help_text='<b style="color:green;font-size: 12px">*IMPORTANT* Only add either Video link or Image, If you add both, only the image will be shown</b>')
     text = RichTextField()
     research_center = models.ForeignKey(Research_Center,on_delete=models.CASCADE)
 
