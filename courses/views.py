@@ -2,9 +2,14 @@ from django.shortcuts import render, HttpResponse
 from django.conf import settings
 from django.shortcuts import reverse, redirect, render
 from django.http.response import JsonResponse
+from django.shortcuts import redirect
+
 from courses import models
 
 import requests, json
+
+def index(request):
+    return redirect('/courses')
 
 def courses(request):
     Courses= models.Course.objects.all()
