@@ -56,7 +56,10 @@ def contests_individual(request, contest_id):
     return render(request, 'contests/individual_contest.html', context)
 
 def ContestSubmit(request, contest_id):
-    image=uploader.upload(request.FILES['image'])
+    try:
+        image=uploader.upload(request.FILES['image'])
+    except:
+        image={'url':None, 'image_id':None}
     print(image)
     models.Submission.objects.create(user_id=request.user, caption=request.POST['caption'], image=image['url'],image_id=image['public_id'], contest=models.Contest.objects.get(pk=contest_id))
     return redirect("/contests/"+str(contest_id))
