@@ -149,7 +149,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-YOUTUBE_DATA_API_KEY = 'AIzaSyDIM5C1ApmoxE21ruBPAJVKsV64EtBYsfw'
+YOUTUBE_DATA_API_KEY = 'AIzaSyC3biMiTsP8TySKY3-HIaUVO1X-l6WvRwE'
 
 cloudinary.config( 
   cloud_name = "asha-akanksha-foundation", 
