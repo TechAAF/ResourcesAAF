@@ -9,6 +9,8 @@ div.wrapper {
 .top-div {
     height: 50vh;
     max-height: 700px;
+
+    background:url('../Images/Courses.jpg') no-repeat center center/cover;
     
     color: white;
     margin-top: 70px;
@@ -17,7 +19,7 @@ div.wrapper {
     align-items: center;
     margin-bottom: 3rem;
 }
-.top-div::before{
+/* .top-div::before{
     content:"";
     position: absolute;
     background:url('../Images/Courses.jpg') no-repeat center center/cover;
@@ -28,7 +30,7 @@ div.wrapper {
     opacity: 0.9;
     z-index: -1;
 
-}
+} */
 
 .top-div-wrapper {
     position: relative;

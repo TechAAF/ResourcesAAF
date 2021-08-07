@@ -77,7 +77,7 @@ def get_videos(url):
 
 def course_playlist(request, course_id):    
     course = models.Course.objects.get(pk=course_id)
-
+    
     playlist = get_videos(course.playlist_id)['items']
 
     print(playlist[0]['snippet'])

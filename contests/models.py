@@ -14,7 +14,7 @@ class Category(models.Model):
 
 class Contest(models.Model):
     name = models.CharField(max_length=200)
-    description = models.CharField("Short Description",max_length=200, null=True)
+    short_description = models.TextField("short description", max_length=250, blank=True, null=True, help_text='<b style="color:dodgerblue;font-size: 12px">Description of the card shown on all contests page. *MAX_Length = 250 characters"</b>')
     info = RichTextField("Information of Contest", null=True)
     image = CloudinaryField('image', blank=True, null=True)
     start_date = models.DateField()
@@ -34,4 +34,5 @@ class Submission(models.Model):
     image_id=models.CharField(null=True,default="",max_length=200)
     # video_url=models.TextField(blank=True, null=True)
     status=models.BooleanField("Approved", default=False)
+    
 
