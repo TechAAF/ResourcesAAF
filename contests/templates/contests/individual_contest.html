@@ -75,7 +75,7 @@
                     <div class="submissions">
                         <div class="submission-card">
                             <div class="card">
-                                <div class="card-header py-3"><strong>{{submission.user_id.username}}</strong></div>
+                                <div class="card-header py-3"><strong>{{submission.user_id.username}}</strong> <span style="color: gray;float: right;"> {{submission.date.date}} </span></div>
                                 {% if submission.image %}
                                     <img src="{{ submission.image}}" class="card-img-top" alt="...">
                                 {% endif %}

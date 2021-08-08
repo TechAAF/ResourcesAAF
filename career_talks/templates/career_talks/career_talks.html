@@ -66,16 +66,9 @@
                             id="{{option.name}}"
                             name="filter_list"
                             value="{{option.name}}"
-                            {%
-                            if
-                            option.name
-                            in
-                            active_filters
-                            %}
-                            checked
-                            {%
-                            endif
-                            %}
+                            {% if option.name in active_filters %}
+                                checked
+                            {% endif %}
                         />
                         <label for="{{option.name}}">{{option.name}}</label
                         ><br />
