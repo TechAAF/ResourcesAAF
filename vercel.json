@@ -1,7 +1,7 @@
 
 {
     "builds": [{
-        "src": "vercel_app/wsgi.py",
+        "src": "AAF_summer_website/wsgi.py",
         "use": "@ardnt/vercel-python-wsgi",
         "config": { "maxLambdaSize": "15mb" }
     }],
