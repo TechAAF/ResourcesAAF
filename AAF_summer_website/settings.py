@@ -15,6 +15,7 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,12 +25,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*xdyt+kp%_&%v^(^12*cbit%8^zb5wmwwis(8np=7*4kz(o0&@'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','.aafngo.org']
+if DEBUG:
+    SECRET_KEY = 'django-insecure-*xdyt+kp%_&%v^(^12*cbit%8^zb5wmwwis(8np=7*4kz(o0&@'
+else: 
+    SECRET_KEY = os.getenv('SECRET_KEY')
+
+ALLOWED_HOSTS = ['.vercel.app','.aafngo.org','localhost']
 
 
 # Application definition
@@ -98,16 +104,29 @@ WSGI_APPLICATION = 'AAF_summer_website.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'bfyu5g9jrhus8ridjtwv',
-       'USER': 'uuprvqijeku0rf9sjcws',
-       'PASSWORD': '2bkXBLtRyhhjcrosfTuw',
-       'HOST': 'bfyu5g9jrhus8ridjtwv-postgresql.services.clever-cloud.com',
-       'PORT': '5432',
-   }
-}
+if DEBUG:
+    DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bfyu5g9jrhus8ridjtwv',
+        'USER': 'uuprvqijeku0rf9sjcws',
+        'PASSWORD': '2bkXBLtRyhhjcrosfTuw',
+        'HOST': 'bfyu5g9jrhus8ridjtwv-postgresql.services.clever-cloud.com',
+        'PORT': '5432',
+    }
+    }
+else:
+    DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('NAME'),
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('HOST'),
+        'PORT': '5432',
+    }
+    }
+    
 
 
 # Password validation
@@ -148,14 +167,25 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-YOUTUBE_DATA_API_KEY = 'AIzaSyC3biMiTsP8TySKY3-HIaUVO1X-l6WvRwE'
+if DEBUG:
+    YOUTUBE_DATA_API_KEY = 'AIzaSyC3biMiTsP8TySKY3-HIaUVO1X-l6WvRwE'
 
-cloudinary.config( 
-  cloud_name = "asha-akanksha-foundation", 
-  api_key = "168986432131599", 
-  api_secret = "jWbGr2VB_ChVqQtZZzwBmCg-Ups",
-  secure = True,
-)
+    cloudinary.config( 
+    cloud_name = "asha-akanksha-foundation", 
+    api_key = "168986432131599", 
+    api_secret = "jWbGr2VB_ChVqQtZZzwBmCg-Ups",
+    secure = True,
+    )
+
+else:
+    YOUTUBE_DATA_API_KEY = os.getenv("YOUTUBE_DATA_API_KEY")
+
+    cloudinary.config( 
+    cloud_name = "asha-akanksha-foundation", 
+    api_key = os.getenv('api_key'), 
+    api_secret = os.getenv('api_secret'),
+    secure = True,
+    )
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
