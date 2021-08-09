@@ -16,7 +16,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import os
-
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 
 if DEBUG:
-    SECRET_KEY = 'django-insecure-*xdyt+kp%_&%v^(^12*cbit%8^zb5wmwwis(8np=7*4kz(o0&@'
+    SECRET_KEY = config('SECRET_KEY')
 else: 
     SECRET_KEY = os.getenv('SECRET_KEY')
 
@@ -108,10 +108,10 @@ if DEBUG:
     DATABASES = {
         'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bfyu5g9jrhus8ridjtwv',
-        'USER': 'uuprvqijeku0rf9sjcws',
-        'PASSWORD': '2bkXBLtRyhhjcrosfTuw',
-        'HOST': 'bfyu5g9jrhus8ridjtwv-postgresql.services.clever-cloud.com',
+        'NAME': config('NAME'),
+        'USER': config('USER'),
+        'PASSWORD': config('PASSWORD'),
+        'HOST': config('HOST'),
         'PORT': '5432',
     }
     }
@@ -168,12 +168,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 if DEBUG:
-    YOUTUBE_DATA_API_KEY = 'AIzaSyC3biMiTsP8TySKY3-HIaUVO1X-l6WvRwE'
+    YOUTUBE_DATA_API_KEY = config('YOUTUBE_DATA_API_KEY')
 
     cloudinary.config( 
     cloud_name = "asha-akanksha-foundation", 
-    api_key = "168986432131599", 
-    api_secret = "jWbGr2VB_ChVqQtZZzwBmCg-Ups",
+    api_key = config('api_key'), 
+    api_secret = config('api_secret'),
     secure = True,
     )
 
