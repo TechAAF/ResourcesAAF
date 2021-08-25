@@ -7,10 +7,10 @@ div.wrapper {
 
 
 .top-div {
-    height: 50vh;
+    height: 60vh;
     max-height: 700px;
 
-    background:url('../Images/Courses.jpg') no-repeat center center/cover;
+    background: url('../Images/courses-bg.jpg') no-repeat center center/cover;
     
     color: white;
     margin-top: 70px;
