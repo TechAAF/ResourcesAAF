@@ -9,10 +9,10 @@ div.wrapper {
 
 
 .top-div {
-    height: 50vh;
+    height: 60vh;
     max-height: 700px;
 
-    background:url('../Images/Contests.jpg') no-repeat center center/cover;
+    background:url('../Images/contests-bg.jpg') no-repeat center center/cover;
     
     color: white;
     margin-top: 70px;
