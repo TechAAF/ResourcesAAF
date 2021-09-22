@@ -35,7 +35,7 @@ if DEBUG:
 else: 
     SECRET_KEY = os.getenv('SECRET_KEY')
 
-ALLOWED_HOSTS = ['.vercel.app','.aafngo.org','localhost']
+ALLOWED_HOSTS = ['.vercel.app','.aafngo.org','localhost', '127.0.0.1']
 
 
 # Application definition
