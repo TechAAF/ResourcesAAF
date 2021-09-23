@@ -1,0 +1,5 @@
+@media only screen and (max-width: 600px){
+    span.nav-heading {
+        font-size: 12px;
+    }
+}
